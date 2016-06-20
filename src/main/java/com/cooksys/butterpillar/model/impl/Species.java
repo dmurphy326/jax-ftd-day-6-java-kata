@@ -8,7 +8,7 @@ import com.cooksys.butterpillar.model.ISpecies;
 public class Species implements ISpecies {
 
 	private String name;
-	private IGrowthModel growthModel = new GrowthModel();
+	private IGrowthModel growthModel; // = new GrowthModel(); DON'T DO THAT
 	//private ICatterfly
 	
 	public Species()
@@ -50,7 +50,7 @@ public class Species implements ISpecies {
 
 	@Override
 	public ICatterfly[] convert(IButterpillar[] butterpillars) {
-		ICatterfly[] catterArray = null;
+		ICatterfly[] catterArray = new ICatterfly[ butterpillars.length];  //ICatterfly[] catterArray = null; <-- what you did gave a warning
 		
 		int i = 0;
 		
@@ -64,7 +64,7 @@ public class Species implements ISpecies {
 
 	@Override
 	public IButterpillar[] convert(ICatterfly[] catterflies) {
-		IButterpillar[] butterArray = null;
+		IButterpillar[] butterArray = new IButterpillar[catterflies.length];
 		
 		int i = 0;
 		
